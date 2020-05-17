@@ -54,13 +54,9 @@ function _getNodeOpacity(node, highlightedNode, highlightedLink, config) {
  */
 function buildLinkProps(link, nodes, links, config, linkCallbacks, highlightedNode, highlightedLink, transform) {
     const { source, target } = link;
-
     let x1 = nodes?.[source]?.x || 0;
-
     let y1 = nodes?.[source]?.y || 0;
-
     let x2 = nodes?.[target]?.x || 0;
-
     let y2 = nodes?.[target]?.y || 0;
 
     const type = link.type || config.link.type;
@@ -169,8 +165,8 @@ function buildLinkProps(link, nodes, links, config, linkCallbacks, highlightedNo
 function buildNodeProps(node, config, nodeCallbacks = {}, highlightedNode, highlightedLink, transform) {
     const highlight =
         node.highlighted ||
-        (node.id === (highlightedLink && highlightedLink.source) ||
-            node.id === (highlightedLink && highlightedLink.target));
+        node.id === (highlightedLink && highlightedLink.source) ||
+            node.id === (highlightedLink && highlightedLink.target);
     const opacity = _getNodeOpacity(node, highlightedNode, highlightedLink, config);
 
     let fill = node.color || config.node.color;
