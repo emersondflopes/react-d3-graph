@@ -13,7 +13,7 @@ export default class Marker extends React.Component {
                 className="marker"
                 id={this.props.id}
                 viewBox="0 -5 10 10"
-                refX={this.props.refX}
+                refX={26}
                 refY="0"
                 markerWidth={this.props.markerWidth}
                 markerHeight={this.props.markerHeight}
